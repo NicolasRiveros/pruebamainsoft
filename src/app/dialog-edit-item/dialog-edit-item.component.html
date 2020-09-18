@@ -1,0 +1,12 @@
+<div class="form">
+  <span>Access URL</span>
+  <input pInputText placeholder="Access URL" type="text" [(ngModel)]="accessURL"/>
+  <span>About</span>
+  <input type="text" placeholder="About" pInputText [(ngModel)]="about" />
+  <span>Title</span>
+  <input type="text" pInputText placeholder="Title" [(ngModel)]="title"/>
+</div>
+
+<button pButton label="Guardar" (click)="saveItem(item)" ></button>
+
+
