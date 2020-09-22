@@ -99,6 +99,7 @@ export class HomeComponent implements OnInit , AfterViewInit{
       }
       i++;
     }
+    this.totalRecords = this.customers.length;
     this.datatable.clear();
   }
 
