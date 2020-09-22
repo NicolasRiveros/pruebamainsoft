@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit , AfterViewInit{
   }
 
   ngOnInit(): void {
-    this.getData();
+  //  this.getData();
   }
 
 
@@ -99,7 +99,7 @@ export class HomeComponent implements OnInit , AfterViewInit{
       }
       i++;
     }
-    this.totalRecords = this.customers.length;
+    this.totalRecords = this.items.length;
     this.datatable.clear();
   }
 
@@ -118,6 +118,6 @@ export class HomeComponent implements OnInit , AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    this.showError();
+    this.getData();
   }
 }
