@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {TableModule} from 'primeng/table';
 import {RippleModule} from 'primeng/ripple';
 import {ButtonModule} from 'primeng/button';
@@ -14,6 +14,9 @@ import {DialogEditItemComponent} from './dialog-edit-item/dialog-edit-item.compo
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {InputTextModule} from 'primeng/inputtext';
 import {FormsModule} from '@angular/forms';
+import {ServiceService} from './servicios/service.service';
+import {MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
 
 
 @NgModule({
@@ -34,9 +37,13 @@ import {FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     InputTextModule,
     FormsModule,
+    ToastModule,
 
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ServiceService, multi: true},
+    MessageService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

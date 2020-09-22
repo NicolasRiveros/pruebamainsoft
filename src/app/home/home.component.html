@@ -6,8 +6,7 @@
       <button pButton pRipple label="Añadir" type="button" (click)="addItem(undefined)" class="p-button-info"></button>
     </div>
   </div>
-
-  <p-table [value]="customers" [paginator]="true" [rows]="rows"
+  <p-table #table [value]="customers" [paginator]="true" [rows]="5"
            [showCurrentPageReport]="true"
            [lazy]="true"
            (onLazyLoad)="loadData($event)"
@@ -35,3 +34,6 @@
     </ng-template>
   </p-table>
 </div>
+<p-toast position="top-rigth" ></p-toast>
+
+

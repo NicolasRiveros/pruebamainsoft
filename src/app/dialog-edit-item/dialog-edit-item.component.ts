@@ -38,5 +38,6 @@ export class DialogEditItemComponent implements OnInit {
       type: this.item ? this.item.type : null,
     };
     this.ref.close(item);
+    console.log(item);
   }
 }
